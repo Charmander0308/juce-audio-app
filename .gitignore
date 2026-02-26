@@ -1,0 +1,22 @@
+# JUCE generated
+Builds/
+JuceLibraryCode/
+
+# Visual Studio temporary and build files
+.vs/
+Debug/
+Release/
+x64/
+x86/
+*.user
+*.suo
+*.pdb
+*.ilk
+*.log
+*.tlog
+*.lastbuildstate
+*.recipe
+
+# OS files
+Thumbs.db
+.DS_Store
