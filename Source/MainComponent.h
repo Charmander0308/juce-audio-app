@@ -20,9 +20,13 @@ public:
 private:
     void handleIncomingMidiMessage(juce::MidiInput* source, const juce::MidiMessage& message) override;
 
-    std::set<int> activeNotes; // 현재 눌려 있는 건반 번호들을 저장
-    juce::String analyzeChord(const std::set<int>& notes); // 코드 판별 함수
-    // -------------------
+    std::set<int> activeNotes;
+    juce::String analyzeChord(const std::set<int>& notes);
+
+    // --- 소리를 내기 위해 추가된 객체들 ---
+    juce::Synthesiser synth;                 // 신디사이저 본체
+    juce::MidiMessageCollector midiCollector;// MIDI 신호를 모아서 오디오 스레드로 안전하게 전달
+    // --------------------------------------
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(MainComponent)
 };
